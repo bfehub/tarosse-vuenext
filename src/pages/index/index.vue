@@ -6,5 +6,5 @@
 
 <script lang="ts" setup>
 import './index.scss'
-import Counter from '../../components/Counter.vue'
+import Counter from '@/components/Counter.vue'
 </script>

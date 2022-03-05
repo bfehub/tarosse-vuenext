@@ -45,6 +45,7 @@
     "@tarojs/components": "3.4.1",
     "@tarojs/plugin-framework-vue3": "3.4.1",
     "@tarojs/plugin-html": "^3.4.2",
+    "@tarojs/plugin-mock": "^0.0.9",
     "@tarojs/runtime": "3.4.1",
     "@tarojs/taro": "3.4.1",
     "pinia": "^2.0.6",

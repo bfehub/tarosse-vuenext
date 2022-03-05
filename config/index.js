@@ -19,6 +19,8 @@ const config = {
     'taro-plugin-pinia',
     // https://taro-docs.jd.com/taro/docs/html
     '@tarojs/plugin-html',
+    // https://github.com/NervJS/taro-plugin-mock
+    '@tarojs/plugin-mock',
   ],
   defineConstants: {},
   copy: {
