@@ -4,6 +4,8 @@ import { ContentTypeEnum, RequestEnum, ResultEnum } from '@/enums/httpEnum'
 import { HttpRequest } from './HttpRequest'
 import { HttpTransform } from './HttpTransform'
 import { showFullScreenLoading, hideFullScreenLoading } from './helper/loading'
+import { checkCode } from './helper/checkCode'
+// import { normalizeResponse } from './helper/normalizeResponse'
 
 export interface CreateRequestOptions {
   config?: Partial<RequestConfig>
@@ -62,6 +64,7 @@ export const transform: HttpTransform = {
     }
 
     // 这里为后台统一的字段，可以在此做数据转化
+    // const data = normalizeResponse(result.data)
     const data = result.data
     if (!data) {
       throw new Error('请求出错，请稍后重试')
@@ -70,6 +73,8 @@ export const transform: HttpTransform = {
     // 这里为后台统一的字段，可以在此判断返回格式
     if (data.code === ResultEnum.SUCCESS) {
       return data.data
+    } else {
+      checkCode(data)
     }
 
     throw new Error(data.msg)
@@ -102,7 +107,6 @@ export function createRequest(opt?: Partial<CreateRequestOptions>) {
     // CreateRequestOptions.options defalut
     deepMerge(
       {
-        transform,
         isShowLoading: true,
         isNativeResponse: false,
         isTransformResponse: true,

@@ -8,7 +8,7 @@ function startLoading() {
   })
 }
 
-const closeLoading = () => {
+function closeLoading() {
   if (needLoadingRequestCount === 0) {
     Taro.hideLoading()
   }
