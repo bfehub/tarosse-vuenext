@@ -5,7 +5,6 @@ import { HttpRequest } from './HttpRequest'
 import { HttpTransform } from './HttpTransform'
 import { showFullScreenLoading, hideFullScreenLoading } from './helper/loading'
 import { checkCode } from './helper/checkCode'
-// import { normalizeResponse } from './helper/normalizeResponse'
 
 export interface CreateRequestOptions {
   config?: Partial<RequestConfig>
@@ -31,7 +30,7 @@ export const transform: HttpTransform = {
     // if (!config.header) {
     //   config.header = {}
     // }
-    // config.header['Rxjy-Token'] = store.getters.token
+    // config.header['Token'] = store.getters.token
 
     // 时间戳参数避免从缓存中拿数据
     if (config.method === RequestEnum.GET) {

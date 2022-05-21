@@ -25,8 +25,8 @@ export function hideFullScreenLoading() {
   if (needLoadingRequestCount <= 0) return
   needLoadingRequestCount--
   if (needLoadingRequestCount === 0) {
-    setTimeout(() => {
-      closeLoading()
-    })
+    // setTimeout(() => {
+    closeLoading()
+    // })
   }
 }
